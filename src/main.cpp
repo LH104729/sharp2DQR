@@ -14,7 +14,7 @@
 
 
 int main(int argc, char** argv) {
-    cxxopts::Options options("2dqr", "2DQR");
+    cxxopts::Options options("sharp2DQR", "sharp2DQR");
 
     options.add_options()   ("i,input", "Input File", cxxopts::value<std::string>())
                             ("r,rename", "Rename variables", cxxopts::value<bool>()->default_value("false"))

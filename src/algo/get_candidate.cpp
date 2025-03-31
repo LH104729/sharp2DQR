@@ -19,7 +19,6 @@ DdNode* Algo::get_candidate() {
     DdManager* dd = dd_graph_closure.dd;
 
     DdNode* exist_abs_cube = dd->one; Cudd_Ref(exist_abs_cube);
-    // auto assign = assigner(dd, bCand_f1_dd_graph_closure, exist_abs_cube);
     auto assign = [&](int i, bool val) {
         // https://stackoverflow.com/questions/55246590/cudd-manipulation-of-bdds
         DdNode* src = Cudd_bddIthVar(dd, i); Cudd_Ref(src);
