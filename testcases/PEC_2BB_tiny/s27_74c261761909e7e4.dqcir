@@ -1,0 +1,24 @@
+#QCIR-14
+forall(G0,G1,G3,G5,G6,G7)
+depend($G16,G0,G3,G6)
+depend($G15,G0,G1,G6,G7)
+output(RES)
+
+#! $G16 $G15
+w1 = and(-G0, G6)
+w2 = or(G3, w1)
+w3 = and(-G1, -G7)
+w4 = or(w3, w1)
+w5 = or(-w2, -w4)
+w6 = and(G5, w5)
+w7 = and(-G0, G6)
+w8 = and(-G1, -G7)
+w9 = or(-$G16, -$G15)
+wa = and(G5, w9)
+wb = or(-w6, wa)
+wc = or(-wa, w6)
+wd = and(wb, wc)
+we = and(wd)
+
+#! end
+RES = and(we)
